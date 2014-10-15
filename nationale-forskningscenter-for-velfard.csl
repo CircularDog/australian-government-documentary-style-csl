@@ -38,8 +38,8 @@
       <term name="circa" form="short">ca.</term>
       <term name="cited">citeret</term>
       <term name="edition">
-	<single>udgave</single>
-	<multiple>udgaver</multiple>
+        <single>udgave</single>
+        <multiple>udgaver</multiple>
       </term>
       <term name="edition" form="short">udg.</term>
       <term name="et-al">m.fl.</term>
@@ -56,12 +56,12 @@
       <term name="online">online</term>
       <term name="presented at">præsenteret ved</term>
       <term name="reference">
-	<single>reference</single>
-	<multiple>referencer</multiple>
+        <single>reference</single>
+        <multiple>referencer</multiple>
       </term>
       <term name="reference" form="short">
-	<single>ref.</single>
-	<multiple>refr.</multiple>
+        <single>ref.</single>
+        <multiple>refr.</multiple>
       </term>
       <term name="retrieved">hentet</term>
       <term name="scale">scale</term>
@@ -96,72 +96,72 @@
 
       <!-- LONG LOCATOR FORMS -->
       <term name="book">
-	<single>bog</single>
-	<multiple>bøger</multiple>
+        <single>bog</single>
+        <multiple>bøger</multiple>
       </term>
       <term name="chapter">
-	<single>kapitel</single>
-	<multiple>kapitler</multiple>
+        <single>kapitel</single>
+        <multiple>kapitler</multiple>
       </term>
       <term name="column">
-	<single>kolonne</single>
-	<multiple>kolonner</multiple>
+        <single>kolonne</single>
+        <multiple>kolonner</multiple>
       </term>
       <term name="figure">
-	<single>figur</single>
-	<multiple>figurer</multiple>
+        <single>figur</single>
+        <multiple>figurer</multiple>
       </term>
       <term name="folio">
-	<single>folio</single>
-	<multiple>folier</multiple>
+        <single>folio</single>
+        <multiple>folier</multiple>
       </term>
       <term name="issue">
-	<single>nummer</single>
-	<multiple>numre</multiple>
+        <single>nummer</single>
+        <multiple>numre</multiple>
       </term>
       <term name="line">
-	<single>linje</single>
-	<multiple>linjer</multiple>
+        <single>linje</single>
+        <multiple>linjer</multiple>
       </term>
       <term name="note">
-	<single>note</single>
-	<multiple>noter</multiple>
+        <single>note</single>
+        <multiple>noter</multiple>
       </term>
       <term name="opus">
-	<single>opus</single>
-	<multiple>opuser</multiple>
+        <single>opus</single>
+        <multiple>opuser</multiple>
       </term>
       <term name="page">
-	<single>side</single>
-	<multiple>sider</multiple>
+        <single>side</single>
+        <multiple>sider</multiple>
       </term>
       <term name="number-of-pages">
-	<single>side</single>
-	<multiple>sider</multiple>
+        <single>side</single>
+        <multiple>sider</multiple>
       </term>
       <term name="paragraph">
-	<single>afsnit</single>
-	<multiple>afsnit</multiple>
+        <single>afsnit</single>
+        <multiple>afsnit</multiple>
       </term>
       <term name="part">
-	<single>del</single>
-	<multiple>dele</multiple>
+        <single>del</single>
+        <multiple>dele</multiple>
       </term>
       <term name="section">
-	<single>sektion</single>
-	<multiple>sektionerne</multiple>
+        <single>sektion</single>
+        <multiple>sektionerne</multiple>
       </term>
       <term name="sub verbo">
-	<single>sub verbo</single>
-	<multiple>sub verbis</multiple>
+        <single>sub verbo</single>
+        <multiple>sub verbis</multiple>
       </term>
       <term name="verse">
-	<single>vers</single>
-	<multiple>vers</multiple>
+        <single>vers</single>
+        <multiple>vers</multiple>
       </term>
       <term name="volume">
-	<single>bind</single>
-	<multiple>bind</multiple>
+        <single>bind</single>
+        <multiple>bind</multiple>
       </term>
 
       <!-- SHORT LOCATOR FORMS -->
@@ -175,89 +175,89 @@
       <term name="note" form="short">n.</term>
       <term name="opus" form="short">op.</term>
       <term name="page" form="short">
-	<single>s.</single>
-	<multiple>s.</multiple>
+        <single>s.</single>
+        <multiple>s.</multiple>
       </term>
       <term name="number-of-pages" form="short">
-	<single>s.</single>
-	<multiple>s.</multiple>
+        <single>s.</single>
+        <multiple>s.</multiple>
       </term>
       <term name="paragraph" form="short">afs.</term>
       <term name="part" form="short">d.</term>
       <term name="section" form="short">sekt.</term>
       <term name="sub verbo" form="short">
-	<single>s.v.</single>
-	<multiple>s.vv.</multiple>
+        <single>s.v.</single>
+        <multiple>s.vv.</multiple>
       </term>
       <term name="verse" form="short">
-	<single>v.</single>
-	<multiple>v.</multiple>
+        <single>v.</single>
+        <multiple>v.</multiple>
       </term>
       <term name="volume" form="short">
-	<single>bd.</single>
-	<multiple>bd.</multiple>
+        <single>bd.</single>
+        <multiple>bd.</multiple>
       </term>
 
       <!-- SYMBOL LOCATOR FORMS -->
       <term name="paragraph" form="symbol">
-	<single>¶</single>
-	<multiple>¶¶</multiple>
+        <single>¶</single>
+        <multiple>¶¶</multiple>
       </term>
       <term name="section" form="symbol">
-	<single>§</single>
-	<multiple>§§</multiple>
+        <single>§</single>
+        <multiple>§§</multiple>
       </term>
 
       <!-- LONG ROLE FORMS -->
       <term name="director">
-	<single>director</single>
-	<multiple>directors</multiple>
+        <single>director</single>
+        <multiple>directors</multiple>
       </term>
       <term name="editor">
-	<single>redaktør</single>
-	<multiple>redaktører</multiple>
+        <single>redaktør</single>
+        <multiple>redaktører</multiple>
       </term>
       <term name="editorial-director">
-	<single>redaktør</single>
-	<multiple>redaktører</multiple>
+        <single>redaktør</single>
+        <multiple>redaktører</multiple>
       </term>
       <term name="illustrator">
-	<single>illustrator</single>
-	<multiple>illustrators</multiple>
+        <single>illustrator</single>
+        <multiple>illustrators</multiple>
       </term>
       <term name="translator">
-	<single>oversætter</single>
-	<multiple>oversættere</multiple>
+        <single>oversætter</single>
+        <multiple>oversættere</multiple>
       </term>
       <term name="editortranslator">
-	<single>redaktør &amp; oversætter</single>
-	<multiple>redaktører &amp; oversættere</multiple>
+        <single>redaktør &amp; oversætter</single>
+        <multiple>redaktører &amp; oversættere</multiple>
       </term>
 
       <!-- SHORT ROLE FORMS -->
       <term name="director" form="short">
-	<single>dir.</single>
-	<multiple>dirs.</multiple>
+        <single>dir.</single>
+        <multiple>dirs.</multiple>
       </term>
       <term name="editor" form="short">
-	<single>red.</single>
-	<multiple>red.</multiple>
+        <single>red.</single>
+        <multiple>red.</multiple>
       </term>
       <term name="editorial-director" form="short">
-	<single>red.</single>
-	<multiple>red.</multiple>
+        <single>red.</single>
+        <multiple>red.</multiple>
       </term>
       <term name="illustrator" form="short">
-	<single>ill.</single>
-	<multiple>ills.</multiple>
+        <single>ill.</single>
+        <multiple>ills.</multiple>
       </term>
       <term name="translator" form="short">
-	<single>overs.</single>
-	<multiple>overs.</multiple>
+        <single>overs.</single>
+        <multiple>overs.</multiple>
       </term>
       <term name="editortranslator" form="short">
-	<single>red. &amp; overs.</single>
-	<multiple>red. &amp; overs.</multiple>
+        <single>red. &amp; overs.</single>
+        <multiple>red. &amp; overs.</multiple>
       </term>
 
       <!-- VERB ROLE FORMS -->
@@ -382,13 +382,20 @@
   </macro>
   <macro name="publisher">
     <choose>
-      <if type="report" match="any">
+      <if type="book report chapter" match="any">
         <group delimiter=", ">
           <group delimiter=": ">
             <text variable="publisher-place"/>
             <text variable="publisher"/>
           </group>
-          <text variable="number"/>
+          <choose>
+            <if variable="number">
+              <text variable="number"/>
+            </if>
+            <else>
+              <text variable="collection-number"/>
+            </else>
+          </choose>
         </group>
       </if>
       <else-if type="thesis" match="any">
@@ -589,21 +596,21 @@
     </sort>
     <layout suffix=".">
       <choose>
-	<if type="legislation">
-	  <text variable="title"/>
-	</if>
-	<else>
-	  <group>
+        <if type="legislation">
+          <text variable="title"/>
+        </if>
+        <else>
+          <group>
             <text macro="author"/>
             <text macro="issued"/>
             <text macro="title" prefix=" " suffix="."/>
             <text macro="container" prefix=" "/>
             <choose>
               <if type="article-newspaper" match="any">
-		<group font-style="italic" delimiter=". ">
-		  <date  variable="issued" form="text" font-style="italic"/>
-		  <text variable="section"/>
-		</group>
+                <group font-style="italic" delimiter=". ">
+                  <date  variable="issued" form="text" font-style="italic"/>
+                  <text variable="section"/>
+                </group>
               </if>
             </choose>
             <text macro="locators"/>
@@ -613,15 +620,15 @@
             </group>
             <choose>
               <if type="book chapter paper-conference article-newspaper report" match="any">
-		<group delimiter=" " prefix=", ">
-		  <label variable="page" form="short"/>
-		  <text variable="page"/>
-		</group>
+                <group delimiter=" " prefix=", ">
+                  <label variable="page" form="short"/>
+                  <text variable="page"/>
+                </group>
               </if>
             </choose>
             <text macro="access" prefix=" "/>
-	  </group>
-	</else>
+          </group>
+        </else>
       </choose>
     </layout>
   </bibliography>
