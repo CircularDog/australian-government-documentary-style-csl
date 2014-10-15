@@ -590,6 +590,7 @@
     <layout suffix=".">
       <choose>
 	<if type="legislation">
+	  <text variable="title"/>
 	</if>
 	<else>
 	  <group>
