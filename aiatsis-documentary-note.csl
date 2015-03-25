@@ -77,7 +77,7 @@
   <macro name="author">
     <names variable="author">
       <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with="" delimiter=", " delimiter-precedes-last="never"/>
-      <label form="short" prefix=" (" suffix=")" strip-periods="true"/>
+      <label form="short" prefix=" (" suffix=")"/>
       <substitute>
         <names variable="editor"/>
         <text macro="noauthor_title"/>
@@ -96,7 +96,7 @@
   <macro name="author-note">
     <names variable="author">
       <name  and="symbol" sort-separator=", " initialize-with="" delimiter=", " delimiter-precedes-last="never"/>
-      <label form="short" prefix=" (" suffix=")" strip-periods="true"/>
+      <label form="short" prefix=" (" suffix=")"/>
       <substitute>
         <names variable="editor"/>
         <text macro="noauthor_title"/>
@@ -112,7 +112,6 @@
       </if>
     </choose>
   </macro>
-
   <macro name="author-short">
     <names variable="author">
       <label form="short" suffix=" " strip-periods="true"/>
@@ -173,7 +172,7 @@
     <choose>
       <if variable="issued">
 	<choose>
-	  <if type="article-newspaper report post post-weblog song" match="any">
+	  <if type="article-newspaper report paper-conference post post-weblog song" match="any">
             <date variable="issued" form="text"/>
 	  </if>
 	  <else>
@@ -181,7 +180,6 @@
               <date-part name="year"/>
             </date>
 	  </else>
-
 	</choose>
       </if>
       <else>
@@ -324,21 +322,12 @@
     </sort>
     <layout  delimiter="; " suffix=".">
       <choose>
-	<if position="ibid-with-locator">
-	  <group delimiter=" ">
-	    <text term="ibid"/>
-	    <text macro="locator"/>
-	  </group>
-	</if>
-	<else-if position="ibid">
-	  <text term="ibid"/>
-	</else-if>
-	<else-if type="legal_case">
+	<if type="legal_case">
 	  <group delimiter=", ">
 	    <text macro="case"/>
 	    <text macro="locator"/>
 	  </group>
-	</else-if>
+	</if>
 	<else-if position="subsequent">
 	  <group delimiter=", ">
 	    <text macro="author-short"/>
@@ -347,7 +336,7 @@
 	  </group>
 	</else-if>
 	<else>
-          <group delimiter=", " suffix=".">
+          <group delimiter=", ">
             <text macro="author-note"/>
             <text macro="title"/>
             <text macro="editor"/>
@@ -355,9 +344,9 @@
             <text macro="format"/>
             <text macro="container"/>
             <text macro="edition"/>
-            <text variable="number"/>
             <text macro="volume"/>
             <text variable="collection-title"/>
+            <text variable="number"/>
             <text variable="publisher"/>
             <text macro="publisher-place"/>
             <text macro="issue"/>
