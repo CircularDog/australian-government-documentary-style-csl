@@ -51,7 +51,7 @@
 	</names>
 	<names variable="translator">
 	  <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
-          <label prefix=", "/>
+          <label prefix=", " suffix="."/>
 	</names>
       </group>
     </group>
