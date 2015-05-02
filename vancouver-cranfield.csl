@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" page-range-format="expanded" default-locale="en-GB">
   <info>
-    <title>Vancouver-Cranfield University</title>
+    <title>Vancouver - Cranfield University</title>
     <id>http://www.zotero.org/styles/vancouver-cranfield-university</id>
     <link href="http://www.zotero.org/styles/vancouver-cranfield-university" rel="self"/>
     <link href="http://barrington.cranfield.ac.uk/help/Numbered%20Ref%20Guide%20Linked.pdf" rel="documentation"/>
@@ -11,7 +11,7 @@
     </author>
     <category citation-format="numeric"/>
     <category field="medicine"/>
-    <summary>Vancouver style as outlined by International Committee of Medical Journal Editors Uniform Requirements for Manuscripts Submitted to Biomedical Journals: Sample References</summary>
+    <summary>Vancouver style as used by Cranfield University</summary>
     <updated>2012-09-27T22:06:38+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
@@ -30,7 +30,7 @@
   </locale>
   <macro name="author">
     <names variable="author">
-      <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
+      <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always" suffix="."/>
       <label form="short" prefix=" (" suffix=")"/>
       <substitute>
         <names variable="editor"/>
@@ -44,10 +44,16 @@
           <text term="in" text-case="capitalize-first"/>
         </if>
       </choose>
-      <names variable="editor" suffix=".">
-        <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
-        <label form="short" prefix=" (" suffix=")"/>
-      </names>
+      <group delimiter=". ">
+	<names variable="editor">
+          <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
+          <label form="short" prefix=" (" suffix=")"/>
+	</names>
+	<names variable="translator">
+	  <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
+          <label prefix=", "/>
+	</names>
+      </group>
     </group>
   </macro>
   <macro name="publisher">
@@ -112,9 +118,16 @@
   <macro name="title">
     <group delimiter=". ">
       <group>
-	<text variable="title"/>
+	<group delimiter=": ">
+	  <choose>
+	    <if type="patent">
+	      <text variable="number"/>
+	    </if>
+	  </choose>
+	  <text variable="title"/>
+	</group>
 	<choose>
-	  <if type="thesis">
+	  <if type="patent thesis" match="any">
 	    <text variable="genre" prefix=". "/>
 	  </if>
 	  <else>
@@ -161,30 +174,11 @@
         </group>
       </else-if>
       <else-if type="report">
-        <date variable="issued" delimiter=" ">
-          <date-part name="year"/>
-          <date-part name="month" form="short" strip-periods="true"/>
-        </date>
-      </else-if>
-      <else-if type="patent">
-        <group suffix=".">
-          <group delimiter=", ">
-            <text variable="number"/>
-            <date variable="issued">
-              <date-part name="year"/>
-            </date>
-          </group>
-        </group>
+        <date variable="issued" delimiter=" " form="text" date-parts="month-year"/>
       </else-if>
       <else-if type="speech">
         <group delimiter="; ">
-          <group delimiter=" ">
-            <date variable="issued" delimiter=" ">
-              <date-part name="year"/>
-              <date-part name="month" form="short" strip-periods="true"/>
-              <date-part name="day"/>
-            </date>
-          </group>
+          <date variable="issued" form="text"/>
           <text variable="event-place"/>
         </group>
       </else-if>
@@ -200,7 +194,7 @@
   <macro name="pages">
     <choose>
       <if type="article-journal article-magazine article-newspaper" match="any">
-        <text variable="page" prefix=":"/>
+        <text variable="page" prefix=": "/>
       </if>
       <else-if type="book" match="any">
         <text variable="number-of-pages" prefix=" " suffix=" p"/>
@@ -239,7 +233,7 @@
   <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
     <layout>
       <text variable="citation-number" suffix=". "/>
-      <group delimiter=". " suffix=". ">
+      <group delimiter=" " suffix=". ">
         <text macro="author"/>
         <text macro="title"/>
       </group>
@@ -247,11 +241,11 @@
         <text macro="editor"/>
         <text macro="container-title"/>
         <text macro="publisher"/>
-        <group>
-          <text macro="date"/>
+        <text macro="date"/>
+	<group>
           <text macro="journal-location"/>
           <text macro="pages"/>
-        </group>
+	</group>
       </group>
       <text macro="report-details" suffix=". "/>
       <text macro="access"/>
