@@ -234,7 +234,13 @@
       <key variable="citation-number"/>
     </sort>
     <layout prefix="[" suffix="]" delimiter=",">
-      <text variable="citation-number"/>
+      <group delimiter=", ">
+	<text variable="citation-number"/>
+	<group>
+	  <label variable="locator" form="short"/>
+	  <text variable="locator"/>
+	</group>
+      </group>
     </layout>
   </citation>
   <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
