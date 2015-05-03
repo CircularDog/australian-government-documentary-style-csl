@@ -68,11 +68,18 @@
   </macro>
   <macro name="access">
     <choose>
-      <if variable="URL">
+      <if variable="URL DOI" match="any">
 	<group delimiter=" ">
           <group delimiter=": ">
 	    <text term="available at" text-case="capitalize-first"/>
-            <text variable="URL"/>
+	    <choose>
+	      <if variable="DOI">
+		<text variable="DOI" prefix="DOI:"/>
+	      </if>
+	      <else>
+		<text variable="URL"/>
+	      </else>
+	    </choose>
           </group>
 	  <group prefix="(" suffix=")" delimiter=": ">
 	    <text term="accessed" text-case="capitalize-first"/>
@@ -137,7 +144,7 @@
       </group>
       <choose>
 	<if type="article-journal article-magazine chapter paper-conference article-newspaper" match="none">
-          <text macro="edition" prefix=". "/>
+          <text macro="edition"/>
 	</if>
       </choose>
     </group>
