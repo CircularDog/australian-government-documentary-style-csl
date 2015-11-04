@@ -11,7 +11,7 @@
     <category citation-format="author-date"/>
     <category field="social_science"/>
     <summary>The author-date variant of the Chicago style</summary>
-    <updated>2015-10-04T19:32:17+00:00</updated>
+    <updated>2015-11-03T19:32:17+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -51,7 +51,7 @@
             <name and="text" delimiter=", "/>
           </names>
           <names variable="editor translator" delimiter=", ">
-            <label form="verb" suffix=" "/>
+            <label form="verb-short" suffix=" "/>
             <name and="text" delimiter=", "/>
           </names>
         </group>
@@ -60,13 +60,13 @@
   </macro>
   <macro name="editor">
     <names variable="editor">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", "/>
       <label form="short" prefix=", "/>
     </names>
   </macro>
   <macro name="translator">
     <names variable="translator">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", "/>
       <label form="short" prefix=", "/>
     </names>
   </macro>
@@ -98,7 +98,7 @@
   <macro name="contributors">
     <group delimiter=". ">
       <names variable="author">
-        <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+        <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", "/>
         <label form="short" prefix=", "/>
         <substitute>
           <names variable="editor"/>
