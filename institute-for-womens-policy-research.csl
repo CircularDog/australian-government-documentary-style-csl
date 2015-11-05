@@ -103,6 +103,11 @@
         <substitute>
           <names variable="editor"/>
           <names variable="translator"/>
+          <choose>
+            <if type="bill">
+              <text variable="section"/>
+            </if>
+          </choose>
           <names variable="director"/>          
           <text macro="substitute-title"/>
           <text macro="title"/>
@@ -117,6 +122,11 @@
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
+        <choose>
+          <if type="bill">
+            <text variable="section"/>
+          </if>
+        </choose>
         <names variable="director"/>          
         <text macro="substitute-title"/>
         <text macro="title"/>
@@ -299,7 +309,13 @@
           </group>
         </group>
       </else-if>
-      <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+      <else-if type="bill">
+        <group delimiter=", " prefix=". ">
+          <text variable="authority"/>
+          <text variable="chapter-number"/>
+        </group>
+      </else-if>
+      <else-if type="book graphic legal_case legislation motion_picture report song" match="any">
         <group prefix=". " delimiter=". ">
           <group>
             <text term="volume" form="short" text-case="capitalize-first" suffix=" "/>
@@ -419,7 +435,7 @@
   </macro>
   <macro name="date">
     <choose>
-      <if type="article-magazine article-newspaper broadcast legal_case post" match="none">
+      <if type="article-magazine article-newspaper bill broadcast legal_case post" match="none">
         <choose>
           <if variable="issued">
             <group delimiter=" ">
@@ -547,7 +563,7 @@
           <date variable="issued" form="text"/>
         </group>
       </if>
-      <else-if type="article-newspaper article-magazine personal_communication" match="any">
+      <else-if type="article-newspaper article-magazine bill personal_communication" match="any">
         <date variable="issued" form="text" prefix=", "/>
       </else-if>
       <else-if type="patent">
