@@ -11,7 +11,7 @@
     <category citation-format="author-date"/>
     <category field="social_science"/>
     <summary>The author-date variant of the Chicago style</summary>
-    <updated>2015-11-03T19:32:17+00:00</updated>
+    <updated>2015-12-22T19:32:17+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -630,6 +630,7 @@
     <sort>
       <key macro="contributors"/>
       <key variable="issued"/>
+      <key variable="citation-number"/>
       <key variable="title"/>
     </sort>
     <layout suffix=".">
