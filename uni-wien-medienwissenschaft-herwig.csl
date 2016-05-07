@@ -218,6 +218,7 @@
              <else-if position="subsequent">
                <group delimiter=", ">
 		 <text macro="author-short"/>
+		 <date variable="issued" form="numeric" date-parts="year"/>
 		 <text macro="title-short"/>
 		 <text macro="point-locator-subsequent"/>
                </group>
