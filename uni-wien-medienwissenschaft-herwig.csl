@@ -39,7 +39,7 @@
        </macro>
        <macro name="author-short">
 	 <names variable="author">
-	   <name initialize-with=". "/>
+	   <name initialize-with=". " form="short"/>
 	   <et-al font-style="italic"/>
 	   <substitute>
              <names variable="editor"/>
@@ -123,7 +123,6 @@
 	   <if type="article article-journal article-magazine article-newspaper post-weblog" match="any">
              <group delimiter=", " >
                <text variable="volume"/>
-
 	       <group>
 		 <choose>
 		   <if is-numeric="issue">
@@ -141,7 +140,7 @@
        </macro>
        <macro name="publisher-year">
 	 <choose>
-	   <if type="article article-journal article-magazine article-newspaper broadcast" match="none">
+	   <if type="article article-journal article-magazine article-newspaper post-weblog" match="none">
 	     <group delimiter=" ">
 	       <group delimiter=": ">
 		 <text variable="publisher"/>
@@ -165,8 +164,7 @@
 	     <date variable="issued" form="text" date-parts="year"/>
 	   </else>
 	 </choose>
-       </macro>
-       
+       </macro>       
        <macro name="pages">
          <group delimiter=" ">
            <label variable="page" form="short"/>
@@ -199,13 +197,19 @@
 	   </group>
 	 </group>
        </macro>
+       <macro name="point-locator-subsequent">
+	 <group delimiter=" ">
+	   <label variable="locator" form="short"/>
+	   <text variable="locator"/>
+	 </group>
+       </macro>
        <citation>
 	 <layout suffix="." delimiter="; ">
 	   <choose>
              <if position="ibid-with-locator">
                <group delimiter=", ">
 		 <text term="ibid"/>
-		 <text macro="point-locator"/>
+		 <text macro="point-locator-subsequent"/>
                </group>
              </if>
              <else-if position="ibid">
@@ -215,7 +219,7 @@
                <group delimiter=", ">
 		 <text macro="author-short"/>
 		 <text macro="title-short"/>
-		 <text macro="point-locator"/>
+		 <text macro="point-locator-subsequent"/>
                </group>
              </else-if>
              <else>
