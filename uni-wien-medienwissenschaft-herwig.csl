@@ -100,7 +100,7 @@
              <group delimiter=": ">
                <text term="in"/>
                <names variable="editor">
-		 <name/>
+		 <name delimiter="/"/>
 		 <label form="short" prefix=" (" suffix=")"/>
 		 <et-al font-style="italic"/>
                </names>
@@ -142,28 +142,28 @@
 	 <choose>
 	   <if type="article article-journal article-magazine article-newspaper post-weblog" match="none">
 	     <group delimiter=" ">
-	       <group delimiter=": ">
-		 <text variable="publisher"/>
-		 <text variable="publisher-place"/>
+	       <group delimiter=", ">
+		 <group delimiter=": ">
+		   <text variable="publisher"/>
+		   <text variable="publisher-place"/>
+		 </group>
+		 <text variable="event"/>
 	       </group>
-	       <date variable="issued" form="numeric" date-parts="year"/>
+	       <choose>
+		 <if type="speech motion_picture" match="any">
+		   <date variable="issued" form="numeric"/>
+		 </if>
+		 <else>
+		   <date variable="issued" form="numeric" date-parts="year"/>
+		 </else>
+	       </choose>
 	       <date variable="original-date" form="numeric" date-parts="year" prefix="[" suffix="]"/>
              </group>
 	   </if>
 	 </choose>
        </macro>
        <macro name="date-periodical">
-	 <choose>
-	   <if type="article-magazine">
-             <date variable="issued" form="text" date-parts="year-month"/>
-	   </if>
-	   <else-if type="article-newspaper">
-             <date variable="issued" form="numeric"/>
-	   </else-if>
-	   <else>
-	     <date variable="issued" form="text" date-parts="year"/>
-	   </else>
-	 </choose>
+         <date variable="issued" form="numeric"/>
        </macro>       
        <macro name="pages">
          <group delimiter=" ">
@@ -217,8 +217,10 @@
              </else-if>
              <else-if position="subsequent">
                <group delimiter=", ">
-		 <text macro="author-short"/>
-		 <date variable="issued" form="numeric" date-parts="year"/>
+		 <group delimiter=" ">
+		   <text macro="author-short"/>
+		   <date variable="issued" form="numeric" date-parts="year"/>
+		 </group>
 		 <text macro="title-short"/>
 		 <text macro="point-locator-subsequent"/>
                </group>
