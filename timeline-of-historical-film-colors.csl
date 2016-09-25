@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <info>
+    <title>Timeline of Historical Film Colors</title>
+    <id>http://www.zotero.org/styles/timeline-of-historical-film-colors</id>
+    <link href="http://www.zotero.org/styles/timeline-of-historical-film-colors" rel="self"/>
+    <author>
+      <name>Sebastian Karcher</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="generic-base"/>
+    <summary>Style for zauberklang.ch</summary>
+    <updated>2012-09-27T22:06:38+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale>
+    <style-options punctuation-in-quote="false"/>
+  </locale>
+  <macro name="author">
+    <names variable="author">
+      <name delimiter="; " delimiter-precedes-last="always" name-as-sort-order="all"/>
+      <label form="short" prefix=" (" suffix=")"/>
+      <substitute>
+	<names variable="editor"/>
+	<text macro="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor container-author">
+      <name and="text" delimiter-precedes-last="never"/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <macro name="year-date">
+    <date variable="issued" form="numeric" date-parts="year"/>
+  </macro>
+  <macro name="title">
+    <choose>
+      <if type="book thesis report" match="any">
+	<text variable="title" font-style="italic" text-case="title"/>
+      </if>
+      <else>
+	<text variable="title" text-case="title"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="publisher">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+  <macro name="container">
+    <group delimiter=", ">
+      <group delimiter=": ">
+	<text macro="editor"/>
+	<text variable="container-title" font-style="italic"/>
+      </group>
+      <text macro="date-periodical"/>
+    </group>
+  </macro>
+  <macro name="date-periodical">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper" match="any">
+	<group delimiter=", ">
+	  <group delimiter=",">
+	    <text variable="volume"/>
+	    <text variable="issue"/>
+	  </group>
+	  <date variable="issued">
+	    <date-part name="month" form="short" suffix=" "/>
+	    <date-part name="year"/>
+	  </date>
+	</group>
+      </if>
+    </choose>
+  </macro>
+  <macro name="pages">
+    <group delimiter=" ">
+      <label variable="page" form="short"/>
+      <text variable="page"/>
+    </group>
+  </macro>
+  <macro name="locator">
+    <group delimiter=" ">
+      <label variable="locator" form="short"/>
+      <text variable="locator"/>
+    </group>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if variable="URL">
+	<group delimiter=", " prefix="(= " suffix=")">
+	  <text variable="URL"/>
+	  <group delimiter=" ">
+	    <text term="retrieved"/>
+	    <date variable="accessed">
+	      <date-part name="month" form="numeric-leading-zeros" suffix="/"/>
+	      <date-part name="day" form="numeric-leading-zeros" suffix="/"/>
+	      <date-part name="year"/>
+	    </date>
+	  </group>
+	</group>
+      </if>
+    </choose>
+  </macro>
+  <citation>
+    <sort>
+      <key macro="author"/>
+      <key macro="year-date"/>
+    </sort>
+    <layout suffix="." delimiter="; ">
+      <group delimiter=". ">
+	<group delimiter=": ">
+	  <group delimiter=" ">
+	    <text macro="author"/>
+	    <text macro="year-date" prefix="(" suffix=")"/>
+	  </group>
+	  <text macro="title"/>
+	</group>
+	<group delimiter=", ">
+	  <text macro="container"/>
+	  <text macro="publisher"/>
+	  <choose>
+	    <if variable="locator" match="any">
+	      <text macro="locator"/>
+	    </if>
+	    <else>
+	      <text macro="pages"/>
+	    </else>
+	  </choose>
+	</group>
+	<text macro="access"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography>
+    <sort>
+      <key macro="author"/>
+      <key macro="year-date"/>
+      <key variable="title"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=". ">
+	<group delimiter=": ">
+	  <group delimiter=" ">
+	    <text macro="author"/>
+	    <text macro="year-date" prefix="(" suffix=")"/>
+	  </group>
+	  <text macro="title"/>
+	</group>
+	<group delimiter=", ">
+	  <group delimiter=". ">
+	    <text macro="container"/>
+	    <text macro="publisher"/>
+	  </group>
+	  <text macro="pages"/>
+	  <text macro="access"/>
+	</group>
+      </group>
+    </layout>
+  </bibliography>
+</style>
