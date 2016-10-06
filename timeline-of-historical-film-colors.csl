@@ -70,8 +70,7 @@
 	    <text variable="issue"/>
 	  </group>
 	  <date variable="issued">
-	    <date-part name="month" form="short" suffix=" "/>
-	    <date-part name="year"/>
+	    <date-part name="month" form="short"/>
 	  </date>
 	</group>
       </if>
