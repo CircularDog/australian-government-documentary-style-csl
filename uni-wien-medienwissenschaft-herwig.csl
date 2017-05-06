@@ -39,7 +39,7 @@
        </macro>
        <macro name="author-short">
 	 <names variable="author">
-	   <name initialize-with=". " form="short"/>
+	   <name initialize-with=". " form="short" delimiter="/"/>
 	   <et-al font-style="italic"/>
 	   <substitute>
              <names variable="editor"/>
