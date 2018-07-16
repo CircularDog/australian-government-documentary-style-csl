@@ -124,8 +124,8 @@
       </group>
       <choose>
         <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-          <group delimiter=". ">
-            <group prefix=" ">
+          <group delimiter=". " prefix=" ">
+            <group prefix=" " delimiter=" ">
               <text macro="edition"/>
               <text macro="editor-translator"/>
             </group>
