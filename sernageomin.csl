@@ -21,7 +21,7 @@
   <macro name="editor-translator">
     <names variable="editor translator" prefix="(" suffix=")" delimiter=", ">
       <name name-as-sort-order="all" initialize-with="." delimiter="; " sort-separator=", " delimiter-precedes-last="always"/>
-      <label prefix=", "/>
+      <label prefix="; "/>
     </names>
   </macro>
   <macro name="author">
@@ -38,6 +38,7 @@
   <macro name="author-short">
     <names variable="author">
       <name form="short" and="text" delimiter=", " initialize-with=". "/>
+      <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
@@ -91,7 +92,7 @@
       </else>
     </choose>
   </macro>
-  <citation collapse="year" et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true">
+  <citation collapse="year" et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <sort>
       <key variable="author"/>
       <key variable="issued"/>
@@ -136,13 +137,13 @@
           <group prefix=" " delimiter=", ">
             <group delimiter=" ">
               <text variable="genre"/>
-              <text value="inédito"/>
+              <text value="(Inédito)"/>
             </group>
             <text macro="publisher"/>
           </group>
         </else-if>
-        <else-if type="chapter paper-conference" match="any">
-          <group delimiter=": " prefix=" ">
+        <else-if type="chapter" match="any">
+          <group delimiter=" " prefix=" ">
             <text term="in" text-case="capitalize-first" font-style="italic"/>
             <group delimiter=" ">
               <text variable="container-title"/>
@@ -151,6 +152,20 @@
           </group>
           <text macro="publisher" prefix=". "/>
         </else-if>
+        <else-if type="paper-conference" match="any">
+          <group delimiter=" " prefix=" ">
+            <text term="in" text-case="capitalize-first" font-style="italic"/>
+	    <group delimiter=", ">
+            <group delimiter=" ">
+              <text variable="container-title"/>
+              <text macro="editor-translator"/>
+            </group>
+	    <text variable="volume" prefix="No. "/>
+	    <text variable="issue" prefix="Actas "/>
+	    </group>
+	    </group>
+          <text macro="publisher" prefix=": "/>
+        </else-if>	
         <else-if type="article">
           <group delimiter=", " prefix=" ">
             <text variable="publisher"/>
