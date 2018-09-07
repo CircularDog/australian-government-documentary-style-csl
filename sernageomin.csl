@@ -70,14 +70,30 @@
             <text variable="page"/>
           </else>
         </choose>
-        <choose>
-          <if type="thesis" match="none">
-            <text variable="publisher-place"/>
-          </if>
-        </choose>
+        <text variable="publisher-place"/>
       </group>
     </group>
   </macro>
+  <macro name="year-citation">
+    <choose>
+      <if variable="issued">
+	<date variable="issued" form="numeric" date-parts="year"/>
+      </if>
+      <else>
+	<text value="en prensa"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="year-bibliography">
+    <choose>
+      <if variable="issued">
+	<date variable="issued" form="numeric" date-parts="year"/>
+      </if>
+      <else>
+	<text value="En prensa"/>
+      </else>
+    </choose>
+  </macro>  
   <!--  <macro name="access"><choose><if variable="URL"><text variable="URL"/><date variable="accessed" prefix=" (" suffix=")" delimiter=", "><date-part name="month"/><date-part name="year"/></date></if></choose></macro> -->
   <macro name="edition">
     <choose>
@@ -100,9 +116,7 @@
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
         <text macro="author-short"/>
-        <date variable="issued">
-          <date-part name="year"/>
-        </date>
+        <text macro="year-citation"/>
         <group>
           <label variable="locator" form="short"/>
           <text variable="locator" prefix=" "/>
@@ -118,13 +132,11 @@
     <layout suffix=".">
       <group delimiter=". " suffix=".">
         <text macro="author"/>
-        <date variable="issued">
-          <date-part name="year"/>
-        </date>
+        <text macro="year-bibliography"/>
         <text macro="title"/>
       </group>
       <choose>
-        <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+        <if type="bill book graphic legal_case legislation motion_picture song" match="any">
           <group delimiter=". " prefix=" ">
             <group prefix=" " delimiter=" ">
               <text macro="edition"/>
@@ -135,10 +147,7 @@
         </if>
         <else-if type="thesis">
           <group prefix=" " delimiter=", ">
-            <group delimiter=" ">
-              <text variable="genre"/>
-              <text value="(Inédito)"/>
-            </group>
+             <text variable="genre" suffix=" (Inédito)"/>
             <text macro="publisher"/>
           </group>
         </else-if>
@@ -166,9 +175,10 @@
 	    </group>
           <text macro="publisher" prefix=": "/>
         </else-if>	
-        <else-if type="article">
+        <else-if type="article report" match="any">
           <group delimiter=", " prefix=" ">
             <text variable="publisher"/>
+	    <text variable="container-title"/>
             <group delimiter=": ">
               <group delimiter=" ">
                 <text variable="collection-title"/>
