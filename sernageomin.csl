@@ -122,6 +122,7 @@
 	 <sort>
 	   <key macro="author-short"/>
 	   <key variable="issued"/>
+	   <key variable="citation-number"/>
 	   <key variable="title"/>
 	 </sort>
 	 <layout prefix="(" suffix=")" delimiter="; ">
@@ -139,6 +140,7 @@
 	 <sort>
 	   <key macro="author-short"/>
 	   <key variable="issued"/>
+           <key variable="citation-number"/>
 	   <key variable="title"/>
 	 </sort>
 	 <layout suffix=".">
