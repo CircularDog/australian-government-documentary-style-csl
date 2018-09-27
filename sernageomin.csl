@@ -138,7 +138,7 @@
        </citation>
        <bibliography hanging-indent="true">
 	 <sort>
-	   <key macro="author-short"/>
+	   <key macro="author-short" names-min="3" names-use-first="1"/>
 	   <key variable="issued"/>
            <key variable="citation-number"/>
 	   <key variable="title"/>
