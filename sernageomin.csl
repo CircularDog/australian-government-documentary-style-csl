@@ -139,7 +139,7 @@
        <bibliography hanging-indent="true">
 	 <sort>
 	   <key macro="author-short" names-min="3" names-use-first="1"/>
-	   <key variable="issued"/>
+	   <key macro="year-bibliography"/>
            <key variable="citation-number"/>
 	   <key variable="title"/>
 	 </sort>
