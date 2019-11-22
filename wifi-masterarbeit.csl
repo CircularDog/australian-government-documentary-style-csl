@@ -22,6 +22,16 @@
       <term name="retrieved">abgerufen am</term>
     </terms>
   </locale>
+  <macro name="sort-order">
+    <choose>
+      <if type="article-journal book chapter report thesis" match="any">
+        <text value="1"/>
+      </if>
+      <else>
+        <text value="2"/>
+      </else>
+    </choose>
+  </macro>
   <macro name="creator-year-long">
     <group delimiter=" ">
       <names variable="author">
@@ -146,8 +156,9 @@
       </group>
     </layout>
   </citation>
-  <bibliography et-al-min="4" et-al-use-first="1">
+  <bibliography>
     <sort>
+      <key macro="sort-order"/>
       <key macro="creator-short"/>
       <key macro="creator-year-short"/>
     </sort>
