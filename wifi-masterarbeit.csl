@@ -197,8 +197,22 @@
                   <text macro="collection-title-number"/>
                 </group>
               </else-if>
-              <else-if type="personal_communication"></else-if>
-              <else-if type="interview"></else-if>
+              <else-if type="personal_communication">
+                <group delimiter=". ">
+                  <group delimiter=" ">
+                    <choose>
+                      <if variable="genre" match="none">
+                        <text value="E-mail"/>
+                      </if>
+                    </choose>
+                    <text variable="genre"/>
+                    <names variable="recipient" prefix="an ">
+                      <name font-style="italic"/>
+                    </names>
+                  </group>
+                  <date variable="issued" form="numeric"/>
+                </group>
+              </else-if>
               <else>
                 <group delimiter=". ">
                   <choose>
