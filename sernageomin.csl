@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="es-CL" demote-non-dropping-particle="sort-only" page-range-format="expanded">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="es-CL" demote-non-dropping-particle="never" page-range-format="expanded">
   <info>
     <title>SERNAGEOMIN</title>
     <id>http://www.zotero.org/styles/sernageomin</id>
     <link href="http://www.zotero.org/styles/sernageomin" rel="self"/>
     <link href="http://www.zotero.org/styles/soil-science-and-plant-nutrition" rel="template"/>
+    <link href="https://www.sernageomin.cl/" rel="documentation"/>
     <author>
       <name>Sebastian Karcher</name>
     </author>
@@ -43,6 +44,14 @@
         <names variable="editor"/>
         <names variable="translator"/>
         <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="author-count">
+    <names variable="author">
+      <name form="count"/>
+      <substitute>
+        <names variable="editor"/>
       </substitute>
     </names>
   </macro>
@@ -112,8 +121,8 @@
   </macro>
   <citation collapse="year-suffix" et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" cite-group-delimiter=", ">
     <sort>
-      <key macro="author-short" names-min="3" names-use-first="1"/>
       <key macro="year-bibliography"/>
+      <key macro="author-short" names-min="3" names-use-first="1"/>
       <key variable="citation-number"/>
       <key variable="title"/>
     </sort>
@@ -130,6 +139,8 @@
   </citation>
   <bibliography hanging-indent="true">
     <sort>
+      <key macro="author-short" names-min="1" names-use-first="1"/>
+      <key macro="author-count" names-min="3" names-use-first="3"/>
       <key macro="author-short" names-min="3" names-use-first="1"/>
       <key macro="year-bibliography"/>
       <key variable="citation-number"/>
