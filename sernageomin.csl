@@ -164,7 +164,7 @@
         </if>
         <else-if type="thesis">
           <group prefix=" " delimiter=", ">
-            <text variable="genre" suffix=" (Inédito)"/>
+            <text variable="genre"/>
             <text macro="publisher"/>
           </group>
         </else-if>
