@@ -17,6 +17,7 @@
   <locale>
     <terms>
       <term name="in">in</term>
+      <term name="page-range-delimiter">-</term>
     </terms>
   </locale>
   <macro name="editor-translator">
