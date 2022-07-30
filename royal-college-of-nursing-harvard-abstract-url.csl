@@ -99,10 +99,7 @@
   </macro>
   <macro name="DOI-URL">
     <choose>
-      <if variable="DOI">
-        <text variable="DOI" prefix="https://doi.org/"/>
-      </if>
-      <else-if variable="URL">
+      <if variable="URL">
         <text term="available at" suffix=": " text-case="capitalize-first"/>
         <text variable="URL"/>
         <group prefix=" (" delimiter=" " suffix=")">
@@ -113,7 +110,7 @@
             <date-part name="year"/>
           </date>
         </group>
-      </else-if>
+      </if>
     </choose>
   </macro>
   <macro name="number-volumes">
