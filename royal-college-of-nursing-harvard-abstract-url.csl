@@ -284,28 +284,30 @@
       <key variable="title"/>
     </sort>
     <layout suffix=".">
-      <group delimiter=". ">
-        <group delimiter=" ">
-          <text macro="author"/>
-          <text macro="year-date" prefix="(" suffix=")"/>
-          <group delimiter=", ">
-            <text macro="title"/>
-            <group delimiter=" ">
-              <text macro="container-prefix"/>
-              <text macro="editor"/>
-              <text macro="container-title"/>
+      <group suffix=". ">
+        <group delimiter=". ">
+          <group delimiter=" ">
+            <text macro="author"/>
+            <text macro="year-date" prefix="(" suffix=")"/>
+            <group delimiter=", ">
+              <text macro="title"/>
+              <group delimiter=" ">
+                <text macro="container-prefix"/>
+                <text macro="editor"/>
+                <text macro="container-title"/>
+              </group>
             </group>
           </group>
+          <text macro="secondary-contributors"/>
+          <text macro="publisher"/>
         </group>
-        <text macro="secondary-contributors"/>
-        <text macro="publisher"/>
+        <group delimiter=", " prefix=", ">
+          <text macro="locator"/>
+          <text macro="published-date"/>
+          <text macro="pages"/>
+        </group>
+        <text macro="access" prefix=". "/>
       </group>
-      <group delimiter=", " prefix=", ">
-        <text macro="locator"/>
-        <text macro="published-date"/>
-        <text macro="pages"/>
-      </group>
-      <text macro="access" prefix=". "/>
       <text variable="abstract" display="block"/>
     </layout>
   </bibliography>
