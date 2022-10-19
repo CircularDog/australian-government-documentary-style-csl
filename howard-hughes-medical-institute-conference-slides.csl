@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" default-locale="en-US">
+  <info>
+    <title>Howard Hughes Medical Institute Conference Slides</title>
+    <id>http://www.zotero.org/styles/howard-hughes-medical-institute-conference-slides</id>
+    <link href="http://www.zotero.org/styles/howard-hughes-medical-institute-conference-slides" rel="self"/>
+    <link href="https://twitter.com/leslievosshall/status/1582757206587768832" rel="documentation"/>
+    <author>
+      <name>Sebastian Karcher</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="generic-base"/>
+    <updated>2022-10-19T15:57:12+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", " initialize-with=". "/>
+      <substitute>
+        <names variable="editor"/>
+        <names variable="translator"/>
+        <text macro="anonymous"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="anonymous">
+    <text term="anonymous" form="short"/>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if variable="PMID">
+        <text variable="PMID" prefix="PMID: "/>
+      </if>
+      <else-if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </else-if>
+      <else>
+        <text variable="URL"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="title-short">
+    <text variable="title" form="short"/>
+  </macro>
+  <macro name="issued">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text term="no date" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-givenname="true" disambiguate-add-year-suffix="true" collapse="year" cite-group-delimiter=", ">
+    <sort>
+      <key macro="author-short"/>
+      <key macro="issued" sort="descending"/>
+    </sort>
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author-short"/>
+        <text macro="issued"/>
+        <!--<text macro="title-short"/>-->
+        <text macro="access"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography hanging-indent="true" entry-spacing="0" line-spacing="1">
+    <sort>
+      <key macro="author-short"/>
+      <key macro="issued" sort="descending"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=", ">
+        <text macro="author-short"/>
+        <text macro="issued"/>
+        <!--<text macro="title-short"/>-->
+        <text macro="access"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
